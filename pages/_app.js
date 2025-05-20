@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
 import Layout from '../components/layout/Layout';
+import { Analytics } from '@vercel/analytics/react';
 import '../styles/globals.css';
 
 export default function MyApp({ Component, pageProps }) {
@@ -38,6 +39,7 @@ export default function MyApp({ Component, pageProps }) {
       ) : (
         <Component {...pageProps} />
       )}
+      <Analytics />
     </SessionContextProvider>
   );
 }
